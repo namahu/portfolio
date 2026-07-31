@@ -1,16 +1,11 @@
 {
   "name": "portfolio",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "turbo run dev",
-    "build": "turbo run build",
-    "lint": "turbo run lint"
-  },
-  "devDependencies": {
-    "turbo": "^2.0.0"
-  },
-  "engines": {
-    "node": ">=18"
-  },
-  "packageManager": "pnpm@11.8.0"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "tsx scripts/seed.ts"
+  }
 }
