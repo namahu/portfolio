@@ -5,7 +5,8 @@
     "packages/*"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:api": "npm run test -w packages/backend",
+    "test:ui": "npm run test -w packages/frontend",
     "seed": "tsx scripts/seed.ts"
   }
 }
