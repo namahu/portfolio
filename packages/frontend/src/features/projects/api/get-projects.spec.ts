@@ -3,7 +3,7 @@ import type { Project } from "@portfolio/types";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { getProjects } from "./get-projects";
 
-vi.mock("@/lib/api-client.ts", () => ({
+vi.mock("@/lib/api-client", () => ({
   api: {
     get: vi.fn(),
   },
@@ -27,14 +27,12 @@ describe("get-projects", () => {
 
     const projects = await getProjects();
 
-    console.log(projects);
-
     expect(projects).toEqual(mockProjects);
     expect(api.get).toHaveBeenCalledWith("/projects");
     expect(api.get).toHaveBeenCalledTimes(1);
   });
 
-  it("should return a empty array when projects not exist", async () => {
+  it("should return an empty array when no projects exist", async () => {
     vi.mocked(api.get).mockResolvedValue({ data: [] });
 
     const projects = await getProjects();
@@ -42,5 +40,10 @@ describe("get-projects", () => {
     expect(projects).toHaveLength(0);
     expect(api.get).toHaveBeenCalledWith("/projects");
     expect(api.get).toHaveBeenCalledTimes(1);
+  });
+
+  it("should throw an error when API request fails", async () => {
+    vi.mocked(api.get).mockRejectedValue(new Error("Network Error"));
+    await expect(getProjects()).rejects.toThrow("Network Error");
   });
 });
