@@ -1,27 +1,13 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { api } from "@/lib/api-client";
-import type { Profile } from "@portfolio/types";
 import { getProfile } from "./get-profile";
+import { mockProfile } from "../__mocks__/profile.mock"
 
 vi.mock("@/lib/api-client", () => ({
   api: {
     get: vi.fn(),
   },
 }));
-
-const mockProfile: Profile = {
-  "id": "profile",
-  "firstName": "hoge",
-  "lastName": "huga",
-  "kanjiName": "漢字",
-  "nickName": "hogehuga",
-  "birthDate": "2026-08-02",
-  "bio": "bio",
-  "skills": ["React", "TypeScript"],
-  "socials": {
-    "github": "https://github.com/xxxx",
-  },
-};
 
 describe("get-profile", () => {
   beforeEach(() => vi.clearAllMocks());

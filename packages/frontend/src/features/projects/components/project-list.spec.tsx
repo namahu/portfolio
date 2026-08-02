@@ -4,21 +4,12 @@ import { render } from "vitest-browser-react";
 import { getProjects } from "../api/get-projects";
 import { ProjectList } from "./project-list";
 import { page } from "vitest/browser";
-import { Suspense, useState } from "react";
+import { Suspense } from "react";
+import { buildProject } from "../__mocks__/project.mock";
 
 vi.mock("../api/get-projects", () => ({
   getProjects: vi.fn(),
 }));
-
-const buildProject = (override: Partial<Project> = {}) => ({
-  id: "project-1",
-  title: "project-1",
-  description: "test project",
-  techStack: ["React", "TypeScript"],
-  link: "https://xxx.xx",
-  createdAt: "2026-07-31 00:00:00",
-  ...override,
-}) as Project;
 
 const renderProjectList = (promise: Promise<Project[]>) => (
   render(

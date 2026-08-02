@@ -4,20 +4,7 @@ import { render } from "vitest-browser-react";
 import { Suspense } from "react";
 import { ProfileField } from "./profile";
 import { page } from "vitest/browser";
-
-const mockProfile: Profile = {
-  "id": "profile",
-  "firstName": "hoge",
-  "lastName": "huga",
-  "kanjiName": "漢字",
-  "nickName": "hogehuga",
-  "birthDate": "1983-03-26",
-  "bio": "bio",
-  "skills": ["React", "TypeScript"],
-  "socials": {
-    "github": "https://github.com/xxxx",
-  },
-};
+import { mockProfile } from "../__mocks__/profile.mock"
 
 const renderProfile = (promise: Promise<Profile>) => (
   render(
