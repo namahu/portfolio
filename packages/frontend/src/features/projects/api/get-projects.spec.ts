@@ -1,23 +1,13 @@
 import { api } from "@/lib/api-client";
-import type { Project } from "@portfolio/types";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { getProjects } from "./get-projects";
+import { buildProject } from "../__mocks__/project.mock";
 
 vi.mock("@/lib/api-client", () => ({
   api: {
     get: vi.fn(),
   },
 }));
-
-const buildProject = (override: Partial<Project> = {}) => ({
-  id: "project-1",
-  title: "project-1",
-  description: "test project",
-  techStack: ["React", "TypeScript"],
-  link: "https://xxx.xx",
-  createdAt: "2026-07-31 00:00:00",
-  ...override,
-}) as Project;
 
 describe("get-projects", () => {
   afterEach(() => vi.resetAllMocks());
