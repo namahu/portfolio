@@ -5,6 +5,7 @@
     "packages/*"
   ],
   "scripts": {
+    "dev:ui": "npm run dev -w packages/frontend",
     "test:api": "npm run test -w packages/backend",
     "test:ui": "npm run test -w packages/frontend",
     "seed": "tsx scripts/seed.ts"
