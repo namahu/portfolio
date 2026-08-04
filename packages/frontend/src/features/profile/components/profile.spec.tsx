@@ -27,10 +27,12 @@ describe("Profile component", () => {
 
     await expect.element(page.getByText(`${mockProfile.kanjiName} (${mockProfile.nickName})`)).toBeVisible();
     await expect.element(page.getByText(`${mockProfile.lastName} ${mockProfile.firstName}`, { exact: true})).toBeVisible();
-    await expect.element(page.getByText(`${mockProfile.birthDate} (43)`)).toBeVisible();
-    await expect.element(page.getByText(mockProfile.skills.join(", "))).toBeVisible();
+    await expect.element(page.getByText(`${mockProfile.birthDate} (age: 43)`)).toBeVisible();
+    mockProfile.skills.forEach(skill => {
+      expect(page.getByText(skill)).toBeVisible();
+    });
     await expect.element(page.getByText(mockProfile.socials.github)).toBeVisible();
-    await expect.element(page.getByText(mockProfile.bio)).toBeVisible();
+    await expect.element(page.getByText(mockProfile.bio, { exact: true })).toBeVisible();
   });
 
   it("should not render profile field when profile does not exist", async () => {
