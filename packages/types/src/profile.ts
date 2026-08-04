@@ -10,4 +10,5 @@ export interface Profile {
   socials: {
     github: string;
   };
+  avatar: string;
 }
