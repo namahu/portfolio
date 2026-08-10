@@ -1,0 +1,6 @@
+**/dist
+**/*.html
+**/package.json
+**/package-lock.json
+**/cdk.out/
+**/cdk.json

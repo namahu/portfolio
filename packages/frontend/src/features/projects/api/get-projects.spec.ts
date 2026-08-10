@@ -12,7 +12,10 @@ vi.mock("@/lib/api-client", () => ({
 describe("get-projects", () => {
   afterEach(() => vi.resetAllMocks());
   it("should return an array of projects when projects exist", async () => {
-    const mockProjects = [ buildProject(), buildProject({ id: "project-2", title: "project-2" })];
+    const mockProjects = [
+      buildProject(),
+      buildProject({ id: "project-2", title: "project-2" }),
+    ];
     vi.mocked(api.get).mockResolvedValue({ data: mockProjects });
 
     const projects = await getProjects();

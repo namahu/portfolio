@@ -1,6 +1,6 @@
-import * as cdk from 'aws-cdk-lib/core';
-import { Template } from 'aws-cdk-lib/assertions';
-import * as Backend from '../lib/backend-stack';
+import * as cdk from "aws-cdk-lib/core";
+import { Template } from "aws-cdk-lib/assertions";
+import * as Backend from "../lib/backend-stack";
 
 // example test. To run these tests, uncomment this file along with the
 // example resource in lib/backend-stack.ts
@@ -19,7 +19,7 @@ import * as Backend from '../lib/backend-stack';
 describe("BackendStack", () => {
   it("matches the snapshot", () => {
     const app = new cdk.App();
-    const backendStack = new Backend.BackendStack(app, "BackendStack")
+    const backendStack = new Backend.BackendStack(app, "BackendStack");
 
     const template = Template.fromStack(backendStack);
     expect(template.toJSON()).toMatchSnapshot();

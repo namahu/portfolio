@@ -6,8 +6,13 @@
   ],
   "scripts": {
     "dev:ui": "npm run dev -w packages/frontend",
+    "build:ui": "npm run build -w packages/frontend",
     "test:api": "npm run test -w packages/backend",
     "test:ui": "npm run test -w packages/frontend",
-    "seed": "tsx scripts/seed.ts"
+    "deploy:api": "npx -w packages/backend cdk deploy",
+    "seed": "npm run seed -w packages/backend"
+  },
+  "devDependencies": {
+    "prettier": "3.9.6"
   }
 }

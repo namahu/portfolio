@@ -1,3 +1,4 @@
+import { ProjectCard } from "@/components/project-card";
 import type { Project } from "@portfolio/types";
 import { use } from "react";
 
@@ -7,27 +8,51 @@ export type ProjectListProps = {
 
 export function ProjectList({ projectPromise }: ProjectListProps) {
   const projects = use(projectPromise);
+  const personalProject = projects.filter(
+    (project) => project.type === "personal",
+  );
+  const businessProject = projects.filter(
+    (project) => project.type === "business",
+  );
+  const oss = projects.filter((project) => project.type === "oss");
 
   return (
-    <div className="m-4 flex gap-4">
-      {projects.map(project => (
-        <div key={project.id}
-          className="w-lg bg-zinc-100 p-2 border border-zinc-300 rounded-xl flex flex-col gap-2"
-        >
-          <h2>{project.title}</h2>
-          <div className="mx-4">
-            <p>{project.description}</p>
-          </div>
-          <div className="mx-4 flex flex-col items-start">
-            <span className="font-semibold">技術スタック</span>
-            <span className="mx-4">{project.techStack.join(", ")}</span>
-          </div>
-          <div className="mx-4 flex flex-col items-start">
-            <span className="font-semibold">Link</span>
-            <span className="mx-4">{project.link}</span>
+    <div className="w-98% m-4 flex flex-col gap-2">
+      {/* Contents Title */}
+      <h1 className="border-b-2 border-zinc-200">Projects</h1>
+
+      {/* Contents Body */}
+      <div className="mx-2 flex flex-col gap-4">
+        {/* Parsoal */}
+        <div>
+          <h2>Personal Projects</h2>
+          <div className="mx-2 flex flex-row flex-wrap gap-4">
+            {personalProject.map((project) => (
+              <ProjectCard key={project.id} type={"personal"} project={project} />
+            ))}
           </div>
         </div>
-      ))}
+
+        {/* Business */}
+        <div>
+          <h2>Business Projects</h2>
+          <div className="mx-2 flex flex-row flex-wrap gap-4">
+            {businessProject.map((project) => (
+              <ProjectCard key={project.id} type={"business"} project={project} />
+            ))}
+          </div>
+        </div>
+
+        {/* OSS */}
+        <div>
+          <h2>OSS Contribute</h2>
+          <div className="mx-2 flex flex-row flex-wrap gap-4">
+            {oss.map((project) => (
+              <ProjectCard key={project.id} type={"oss"} project={project} />
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
-};
+}

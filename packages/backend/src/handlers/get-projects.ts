@@ -8,14 +8,14 @@ const docClient = DynamoDBDocumentClient.from(client);
 export const handler: APIGatewayProxyHandler = async () => {
   const headers = {
     "Content-type": "application/json",
-    "Access-Controll-Allow-Origin": "*", // CORS対応
+    "Access-Control-Allow-Origin": "*", // CORS対応
   };
 
   try {
     const command = new ScanCommand({
       TableName: process.env.PROJECTS_TABLE_NAME,
     });
-  
+
     const response = await docClient.send(command);
 
     return {
@@ -28,7 +28,7 @@ export const handler: APIGatewayProxyHandler = async () => {
     return {
       statusCode: 500,
       headers,
-      body: JSON.stringify({ message: "Internal server error"}),
+      body: JSON.stringify({ message: "Internal server error" }),
     };
   }
 };
