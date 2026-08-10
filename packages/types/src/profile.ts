@@ -1,4 +1,4 @@
-export interface Profile {
+interface BaseProfile {
   id: string;
   firstName: string;
   lastName: string;
@@ -9,6 +9,14 @@ export interface Profile {
   skills: string[];
   socials: {
     github: string;
+    zenn: string;
   };
-  avatar: string;
+}
+
+export interface ProfileWithAvatarKey extends BaseProfile {
+  avatarKey: string;
+}
+
+export interface ProfileResponseDTO extends BaseProfile {
+  avatarUrl: string;
 }

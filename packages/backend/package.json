@@ -5,9 +5,11 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "seed": "tsx scripts/seed.ts"
   },
   "devDependencies": {
+    "@aws-sdk/client-cloudformation": "^3.1106.0",
     "@swc/core": "^1.15.0",
     "@swc/jest": "^0.2.39",
     "@types/aws-lambda": "^8.10.162",
@@ -20,8 +22,12 @@
   },
   "dependencies": {
     "@aws-sdk/client-dynamodb": "^3.1097.0",
+    "@aws-sdk/client-s3": "^3.1105.0",
     "@aws-sdk/lib-dynamodb": "^3.1097.0",
+    "@aws-sdk/s3-request-presigner": "^3.1105.0",
+    "@portfolio/types": "*",
     "aws-cdk-lib": "^2.262.0",
-    "constructs": "^10.5.0"
+    "constructs": "^10.5.0",
+    "dotenv": "^17.4.2"
   }
 }

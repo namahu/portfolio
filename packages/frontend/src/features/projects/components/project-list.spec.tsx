@@ -11,13 +11,12 @@ vi.mock("../api/get-projects", () => ({
   getProjects: vi.fn(),
 }));
 
-const renderProjectList = (promise: Promise<Project[]>) => (
+const renderProjectList = (promise: Promise<Project[]>) =>
   render(
-    <Suspense fallback={ <div>...Loading</div> }>
+    <Suspense fallback={<div>...Loading</div>}>
       <ProjectList projectPromise={promise} />
-    </Suspense>
-  )
-);
+    </Suspense>,
+  );
 
 describe("ProjectList Component", () => {
   beforeEach(() => {
@@ -32,28 +31,46 @@ describe("ProjectList Component", () => {
         description: "test project 2",
         link: "https://xxx.xxx",
         techStack: ["React", "TypeScript", "AWS"],
-      })
+      }),
     ];
     vi.mocked(getProjects).mockResolvedValue(mockProjects);
-    
+
     await renderProjectList(getProjects());
 
-    await expect.element(page.getByText(mockProjects[0].title, { exact: true })).toBeVisible();
-    await expect.element(page.getByText(mockProjects[0].description, { exact: true })).toBeVisible();
-    await expect.element(page.getByText(mockProjects[0].link, { exact: true })).toBeVisible();
-    await expect.element(page.getByText(mockProjects[0].techStack.join(", "), { exact: true })).toBeVisible();
+    await expect
+      .element(page.getByText(`${mockProjects[0].title}`, { exact: true }))
+      .toBeVisible();
+    await expect
+      .element(page.getByText(mockProjects[0].description, { exact: true }))
+      .toBeVisible();
+    await expect
+      .element(page.getByText(`${mockProjects[0].link}`, { exact: true }))
+      .toBeVisible();
+    await expect
+      .element(
+        page.getByText(mockProjects[0].techStack.join(", "), { exact: true }),
+      )
+      .toBeVisible();
 
-    await expect.element(page.getByText(mockProjects[1].title, { exact: true })).toBeVisible();
-    await expect.element(page.getByText(mockProjects[1].description, { exact: true })).toBeVisible();
-    await expect.element(page.getByText(mockProjects[1].link, { exact: true })).toBeVisible();
-    await expect.element(page.getByText(mockProjects[1].techStack.join(", "), { exact: true })).toBeVisible();
-
+    await expect
+      .element(page.getByText(`${mockProjects[1].title}`, { exact: true }))
+      .toBeVisible();
+    await expect
+      .element(page.getByText(mockProjects[1].description, { exact: true }))
+      .toBeVisible();
+    await expect
+      .element(page.getByText(`${mockProjects[1].title}`, { exact: true }))
+      .toBeVisible();
+    await expect
+      .element(
+        page.getByText(mockProjects[1].techStack.join(", "), { exact: true }),
+      )
+      .toBeVisible();
   });
 
   it("should not render any project cards when no projects exist", async () => {
     vi.mocked(getProjects).mockResolvedValue([]);
     await renderProjectList(getProjects());
     await expect.element(page.getByRole("heading")).not.toBeInTheDocument();
-  })
-
+  });
 });

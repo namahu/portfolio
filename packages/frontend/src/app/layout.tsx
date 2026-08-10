@@ -2,17 +2,17 @@ import type React from "react";
 
 export type RootLayoutProps = {
   children: React.ReactNode;
-}
+};
 
 export function RootLayout({ children }: RootLayoutProps) {
   return (
-    <div>
+    <div className="w-full animate-fade-in">
       <header className="mx-2 text-xl">
         <div>
           <span>namahu's Portfolio</span>
         </div>
       </header>
-      <main>{children}</main>
+      <main className="w-full">{children}</main>
     </div>
   );
-};
+}
