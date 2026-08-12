@@ -343,6 +343,10 @@ const initialProfile: ProfileWithAvatarKey = {
     "Prisma",
     "PostgreSQL",
   ],
+  certifications: [
+    { id: "certification-1", dateObtained: "2026-01", name: "基本情報技術者試験" },
+    { id: "certification-2", dateObtained: "2026-07", name: "AWS Certified Cloud Practitioner(CLF-C02)" },
+  ],
   socials: {
     github: "https://github.com/namahu",
     zenn: "https://zenn.dev/namahu",

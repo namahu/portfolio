@@ -7,6 +7,11 @@ interface BaseProfile {
   birthDate: string;
   bio: string;
   skills: string[];
+  certifications: {
+    id: string;
+    dateObtained: string;
+    name: string;
+  }[];
   socials: {
     github: string;
     zenn: string;
