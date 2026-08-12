@@ -1,16 +1,18 @@
 {
   "name": "portfolio",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "turbo run dev",
-    "build": "turbo run build",
-    "lint": "turbo run lint"
+    "dev:ui": "npm run dev -w packages/frontend",
+    "build:ui": "npm run build -w packages/frontend",
+    "test:api": "npm run test -w packages/backend",
+    "test:ui": "npm run test -w packages/frontend",
+    "deploy:api": "npx -w packages/backend cdk deploy",
+    "seed": "npm run seed -w packages/backend"
   },
   "devDependencies": {
-    "turbo": "^2.0.0"
-  },
-  "engines": {
-    "node": ">=18"
-  },
-  "packageManager": "pnpm@11.8.0"
+    "prettier": "3.9.6"
+  }
 }

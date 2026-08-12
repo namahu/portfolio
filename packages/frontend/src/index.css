@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-ripple: ripple 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  --animate-ripple-reverse: ripple-reverse 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  --animate-fade-in: fade-in 0.5s ease-out forwards;
+
+  @keyframes ripple {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(60);
+    }
+  }
+
+  @keyframes ripple-reverse {
+    0% {
+      transform: scale(60);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+html {
+  background-color: #fffffb;
+  width: 100%;
+}
+
+#root {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
