@@ -22,6 +22,7 @@ jobs:
   build_and_deploy:
     timeout-minutes: 10
     runs-on: ubuntu-latest
+    environment: Portfolio Production
 
     permissions:
       id-token: write
@@ -66,4 +67,4 @@ jobs:
           set -x
           aws cloudfront create-invalidation \
           --distribution-id ${{ vars.AWS_CLOUDFRONT_DISTRIBUTION_ID }} \
-          --path "index.html"
+          --path "/*"

@@ -7,6 +7,7 @@ import { Suspense, useState, useEffect } from "react";
 import { Welcome } from "@/components/welcome";
 import type { ProfileResponseDTO, Project } from "@portfolio/types";
 import { CircleLoader } from "@/components/circle-loader";
+import { CertificationList } from "@/features/profile/components/certification-list";
 
 export function App() {
   const [profilePromise, setProfilePromise] =
@@ -30,6 +31,7 @@ export function App() {
           <Suspense fallback={null}>
             <RootLayout>
               <ProfileField profilePromise={profilePromise} />
+              <CertificationList profilePromise={profilePromise} />
               <ProjectList projectPromise={projectPromise} />
             </RootLayout>
           </Suspense>
