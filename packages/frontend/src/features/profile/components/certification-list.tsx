@@ -10,7 +10,7 @@ export function CertificationList({ profilePromise }: CertificationListProps) {
   return (
     <div className="m-2 p-2 flex flex-col gap-1">
       {/* Contents Title */}
-      <h1 className="border-b-2 border-zinc-200">Certifications</h1>
+      <h2 className="font-bold border-b-2 border-zinc-200">Certifications</h2>
 
       {/* Contents Body */}
       <div className="p-4 bg-zinc-200 rounded-lg">
