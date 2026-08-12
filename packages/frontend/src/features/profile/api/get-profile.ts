@@ -28,6 +28,9 @@ export const getProfile = async (): Promise<ProfileResponseDTO> => {
         "React",
         "TypeScript",
       ],
+      certifications: [
+        { id: "certification-1", dateObtained: "2026-08", name: "test certification" },
+      ],
       socials: {
         github: "https://github.com/namahu",
         zenn: "",

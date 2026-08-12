@@ -57,6 +57,7 @@ export const handler: APIGatewayProxyHandler = async () => {
         kanjiName: responseItem.kanjiName,
         birthDate: responseItem.birthDate,
         skills: responseItem.skills,
+        certifications: responseItem.certifications ?? [],
         socials: responseItem.socials,
         bio: responseItem.bio,
         avatarUrl: presignedUrl,
