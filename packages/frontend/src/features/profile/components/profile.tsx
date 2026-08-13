@@ -26,26 +26,30 @@ export function ProfileField({ profilePromise }: ProfileProps) {
   return (
     <div className="m-2 p-2 flex flex-col gap-1">
       {/* Contents Title */}
-      <h1 className="border-b-2 border-zinc-200">Profile</h1>
+      <h2 className="font-bold border-b-2 border-zinc-200">Profile</h2>
 
       {/* Contents Body */}
-      <div className="p-4 bg-zinc-200 rounded-lg flex flex-row gap-8">
+      <div className="p-4 bg-zinc-200 rounded-lg flex flex-col lg:flex-row gap-2 lg:gap-8">
         {/* Image Field */}
         <div className="self-center">
-          <img src={profile.avatarUrl} alt="Self Image" className="size-60" />
+          <img src={profile.avatarUrl} alt="Self Image" className="size-40 lg:size-56" />
         </div>
 
         {/* Base Information Field */}
-        <div className="max-w-1/3 flex flex-col gap-4">
-          <div className="flex flex-col">
-            <h2>{profile.nickName}</h2>
+        <div className="lg:max-w-1/3 flex flex-col gap-2">
+
+          {/* Name and birth date */}
+          <div className="flex flex-col items-center lg:items-start">
+            <h3 className="font-semibold">{profile.nickName}</h3>
             <span>
               {profile.birthDate} (age: {calculateAge(profile.birthDate)})
             </span>
           </div>
-          <div className="flex flex-col gap-1">
-            <h3>Skills</h3>
-            <div className="mx-2 flex flex-row flex-wrap gap-1">
+
+          {/* Skills */}
+          <div className="flex flex-col items-center lg:items-start gap-2">
+            <h3 className="lg:w-full border-b border-zinc-400 lg:border-none px-2 lg:px-0">Skills</h3>
+            <div className="mx-1 flex flex-row flex-wrap justify-center lg:justify-start gap-1">
               {profile.skills.map((skill) => (
                 <span className="bg-zinc-50 border border-zinc-300 rounded-xl text-xs mx-1 px-4 py-1">
                   {skill}
@@ -53,8 +57,10 @@ export function ProfileField({ profilePromise }: ProfileProps) {
               ))}
             </div>
           </div>
-          <div>
-            <h3>Links</h3>
+
+          {/* Links */}
+          <div className="flex flex-col items-center lg:items-start gap-2">
+            <h3 className="lg:w-full border-b border-zinc-400 lg:border-none px-2 lg:px-0">Links</h3>
             <div className="mx-2 flex flex-row gap-4">
               <div className="w-8">
                 <a href={profile.socials.github} target="_blank" rel="noopener noreferrer">
@@ -78,8 +84,8 @@ export function ProfileField({ profilePromise }: ProfileProps) {
         </div>
 
         {/* Bio Field */}
-        <div className="w-full max-w-1/3 flex flex-col gap-1">
-          <h3>About Me</h3>
+        <div className="w-full lg:max-w-1/3 flex flex-col items-center lg:items-start gap-1">
+          <h3 className="lg:w-full border-b border-zinc-400 lg:border-none px-2 lg:px-0">About Me</h3>
           <p className="mx-2">{profile.bio}</p>
         </div>
       </div>
