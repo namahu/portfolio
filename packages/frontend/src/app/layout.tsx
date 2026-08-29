@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer";
 import type React from "react";
 
 export type RootLayoutProps = {
@@ -13,6 +14,7 @@ export function RootLayout({ children }: RootLayoutProps) {
         </div>
       </header>
       <main className="w-full overflow-x-hidden">{children}</main>
+      <Footer />
     </div>
   );
 }
