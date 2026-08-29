@@ -35,7 +35,7 @@ const initialProjects: Project[] = [
       issues: null,
       url: "https://github.com/namahu/portfolio",
     },
-    createdAt: new Date().toISOString(),
+    createdAt: "2026-08-12T07:20:40.021Z",
   },
   {
     id: "project-2",
@@ -46,7 +46,7 @@ const initialProjects: Project[] = [
     techStack: ["React", "NestJS", "Prisma", "PostgreSQL", "tailwindCss"],
     link: "https://communi-que.web.app/",
     repository: null,
-    createdAt: new Date().toISOString(),
+    createdAt: "2026-08-12T07:20:40.021Z",
   },
   {
     id: "project-3",
@@ -64,7 +64,7 @@ const initialProjects: Project[] = [
     ],
     link: null,
     repository: null,
-    createdAt: new Date().toISOString(),
+    createdAt: "2026-08-12T07:20:40.021Z",
   },
   {
     id: "project-4",
@@ -81,7 +81,7 @@ const initialProjects: Project[] = [
     ],
     link: null,
     repository: null,
-    createdAt: new Date().toISOString(),
+    createdAt: "2026-08-12T07:20:40.021Z",
   },
   {
     id: "project-5",
@@ -98,7 +98,7 @@ const initialProjects: Project[] = [
     ],
     link: null,
     repository: null,
-    createdAt: new Date().toISOString(),
+    createdAt: "2026-08-12T07:20:40.021Z",
   },
   {
     id: "project-6",
@@ -116,7 +116,7 @@ const initialProjects: Project[] = [
     ],
     link: null,
     repository: null,
-    createdAt: new Date().toISOString(),
+    createdAt: "2026-08-12T07:20:40.021Z",
   },
   {
     id: "project-7",
@@ -133,7 +133,7 @@ const initialProjects: Project[] = [
     ],
     link: null,
     repository: null,
-    createdAt: new Date().toISOString(),
+    createdAt: "2026-08-12T07:20:40.021Z",
   },
   {
     id: "project-8",
@@ -154,7 +154,7 @@ const initialProjects: Project[] = [
     ],
     link: null,
     repository: null,
-    createdAt: new Date().toISOString(),
+    createdAt: "2026-08-12T07:20:40.021Z",
   },
   {
     id: "project-9",
@@ -177,7 +177,7 @@ const initialProjects: Project[] = [
     ],
     link: null,
     repository: null,
-    createdAt: new Date().toISOString(),
+    createdAt: "2026-08-12T07:20:40.021Z",
   },
   {
     id: "project-10",
@@ -199,7 +199,7 @@ const initialProjects: Project[] = [
     ],
     link: null,
     repository: null,
-    createdAt: new Date().toISOString(),
+    createdAt: "2026-08-12T07:20:40.021Z",
   },
   {
     id: "project-11",
@@ -226,7 +226,7 @@ const initialProjects: Project[] = [
       ],
       url: "https://github.com/ali-ahnaf/pocket_pixel/",
     },
-    createdAt: new Date().toISOString(),
+    createdAt: "2026-08-12T07:20:40.021Z",
   },
   {
     id: "project-12",
@@ -241,7 +241,7 @@ const initialProjects: Project[] = [
       issues: [{ number: 72, title: "Download CSV of data" }],
       url: "https://github.com/MarkAStevens04/cloudflare-kinetics-editor/",
     },
-    createdAt: new Date().toISOString(),
+    createdAt: "2026-08-12T07:20:40.021Z",
   },
   {
     id: "project-13",
@@ -261,7 +261,7 @@ const initialProjects: Project[] = [
       ],
       url: "https://github.com/O2sa/DevImpact/",
     },
-    createdAt: new Date().toISOString(),
+    createdAt: "2026-08-12T07:20:40.021Z",
   },
   {
     id: "project-14",
@@ -295,7 +295,7 @@ const initialProjects: Project[] = [
       ],
       url: "https://github.com/shamilahmdt/devtasks/",
     },
-    createdAt: new Date().toISOString(),
+    createdAt: "2026-08-12T07:20:40.021Z",
   },
   {
     id: "project-15",
@@ -312,8 +312,23 @@ const initialProjects: Project[] = [
       ],
       url: "https://github.com/notcodesid/learn-to-code/",
     },
-    createdAt: new Date().toISOString(),
+    createdAt: "2026-08-12T07:20:40.021Z",
   },
+  {
+    id: "project-16",
+    title: "aws-exam-study-progress",
+    type: "personal",
+    description: "「AWS認定資格 WEB問題集＆徹底解説（aws-exam.net）」での学習進捗や正答率を自動記録・可視化する Chrome 拡張機能（Manifest V3）",
+    techStack:["typeScript", "React", "TailwindCSS", "Vite", "Zod"],
+    link: "https://chromewebstore.google.com/detail/aws-exam-study-progress/milllmljhnagjohjegfkafijijhdgfgb",
+    repository: {
+      name: "namahu/aws-exam-study-progress",
+      ownerName: "namahu",
+      issues: null,
+      url: "https://github.com/namahu/aws-exam-study-progress"
+    },
+    createdAt: "2026-08-29T00:00:00.000Z",
+  }
 ];
 
 const initialProfile: ProfileWithAvatarKey = {
