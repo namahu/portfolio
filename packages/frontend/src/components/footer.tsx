@@ -9,4 +9,4 @@ export function Footer() {
       <span>© {yearRange} namahu. All rights reserved.</span>
     </footer>
   );
-};
+}
